@@ -1,0 +1,10 @@
+.vscode/
+tests
+checker.sh
+main
+main.o
+rezultat_valgrind.txt
+tema1
+tema1.in
+tema1.out
+utils.o
