@@ -14,6 +14,7 @@ struct Unit {
 
 // double linked circular with sentinel
 // 3 queues (add rear, front, delete front)
+// also, there is an add front fct for undo
 struct Incident {
 	int id;
 	char priority[7];
