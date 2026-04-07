@@ -33,4 +33,6 @@ All of the code is written by me, i only used ChatGPT to generate
 an example of a char by char string reading algorithm which i
 implemented myself after, not taking it as is. Otherwise, i used
 it for some SEGFAULT / memory leak issues when i really couldn't
-find / fix the problem with gdb and valgrind. 
+find / fix the problem with gdb and valgrind.
+
+By running the local checker, i got 120/120 points.

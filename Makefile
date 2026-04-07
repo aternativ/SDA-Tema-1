@@ -9,5 +9,11 @@ main.o: main.c utils.h
 tema1: main.o utils.o
 	gcc main.o utils.o -o tema1
 
+run:
+	./tema1
+
+pack:
+	zip Tanasi_Robert_315CD.zip main.c utils.c utils.h Makefile README
+
 clean:
 	rm main.o utils.o tema1
