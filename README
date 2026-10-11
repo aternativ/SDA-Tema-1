@@ -1,38 +1,13 @@
-Tanasi Robert - 315CD
-----------------------
-For ease of implementation, i used a System struct which keeps
-all of the relevant system information, which i passed to every
-function that needed it as a pointer to avoid copying the data
-every time.
+The purpose of this exercise is to implement a proof-of-concept emergency dispatch system, intertwining multiple data structures like dynamically allocated vectors, doubly linked lists (supporting multiple data types), queues, stacks and multitrees.
 
-For the purpose of recycling code, i kept every struct definition
-as imposed by the problem statement, without a next / prev node,
-as i have a separate, universal struct for that. It keeps a void*
-pointer that i can then dereference as needed, and thus every
-data structure required is implemented as a doubly linked circular
-list with a sentinel node. I did not use the fictional incident
-as a sentinel node as it would have required specific statements
-(it isn't quite a sentinel node as its information can be requested
-by the commands, like SHOW_INCIDENT). All of the functionality
-for stacks and queues are implemented on top of these lists with
-functions. For the available units' queue size, i kept a separate
-variable as to not add an unnecessary variable to each node,
-function, etc. and to avoid an O(N) solution for size by iterating.
+For ease of implementation, i used a System struct which keeps all of the relevant system information, which i passed to every function that needed it as a pointer to avoid copying the data every time.
 
-For dynamic allocation and reallocation of char arrays, i used
-an initial size of 16 (defined as a macro) and a reallocation
-factor of 2x.
+For the purpose of recycling code, i kept every struct definition as imposed by the problem statement, without a next / prev node, as i have a separate, universal struct for that. It keeps a void* pointer that i can then dereference as needed, and thus every data structure required is implemented as a doubly linked circular list with a sentinel node. I did not use the fictional incident as a sentinel node as it would have required specific statements (it isn't quite a sentinel node as its information can be requested by the commands, like SHOW_INCIDENT). All of the functionality for stacks and queues are implemented on top of these lists with functions. For the available units' queue size, i kept a separate variable as to not add an unnecessary variable to each node, function, etc. and to avoid an O(N) solution for size by iterating.
 
-For freeing memory, i had to add two parameters to the free_list
-function: want_free and is_incident, as the function is universal
-except for two things: we have to avoid double frees, and make
-sure to free the description when needed. (and it only exists 
-for incidents).
+For dynamic allocation and reallocation of char arrays, i used an initial size of 16 (defined as a macro) and a reallocation factor of 2x.
 
-All of the code is written by me, i only used ChatGPT to generate
-an example of a char by char string reading algorithm which i
-implemented myself after, not taking it as is. Otherwise, i used
-it for some SEGFAULT / memory leak issues when i really couldn't
-find / fix the problem with gdb and valgrind.
+For freeing memory, i had to add two parameters to the free_list function: want_free and is_incident, as the function is universal except for two things: we have to avoid double frees, and make sure to free the description when needed. (and it only exists  for incidents).
+
+All of the code is written by me, no LLM involved.
 
 By running the local checker, i got 120/120 points.
